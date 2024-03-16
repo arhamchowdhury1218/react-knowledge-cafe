@@ -21,10 +21,10 @@ function App() {
 
   const handleMarkAsRead = time =>{
 
-    console.log("Read")
-   
-    // const newReadingTime = readingTime + time;
-    // setReadingTime(newReadingTime)
+    
+   console.log(typeof time);
+    const newReadingTime = readingTime + Number(time);
+    setReadingTime(newReadingTime)
   }
 
   return (

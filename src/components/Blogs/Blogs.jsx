@@ -21,8 +21,8 @@ const Blogs = ({handleAddToBookmarks, handleMarkAsRead}) => {
         <div className="md:w-2/3">
             <h1 className="text-4xl">Blogs:{blogs.length}</h1>
             {
-                blogs.map(blog => <Blog
-                    key={blogs.Id}
+                blogs.map((blog, idx) => <Blog
+                    key={idx}
                     blog={blog}
                     handleAddToBookmarks ={handleAddToBookmarks}
                     handleMarkAsRead ={handleMarkAsRead}
@@ -35,8 +35,8 @@ const Blogs = ({handleAddToBookmarks, handleMarkAsRead}) => {
 
 
 Blogs.propTypes = {
-    blog: PropTypes.object.isRequired,
-    handleAddToBookmarks: PropTypes.function,
-    handleMarkAsRead: PropTypes.function
+    
+    handleAddToBookmarks: PropTypes.func,
+    handleMarkAsRead: PropTypes.func
 }
 export default Blogs;
