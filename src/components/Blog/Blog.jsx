@@ -1,6 +1,8 @@
+import { FaBeer } from "react-icons/fa";
+import { IoBookmark } from "react-icons/io5";
 
 
-const Blog = ({blog}) => {
+const Blog = ({blog, bookMarks}) => {
   const {title, cover_img, author,author_img,reading_time,posted_date,hashtags} = blog
   return (
     <div className="border border-gray-300 rounded-lg p-4 m-4">
@@ -12,13 +14,13 @@ const Blog = ({blog}) => {
                 <p className="text-sm font-medium mr">{author}</p>
                 <p className="text-xs text-gray-500">{posted_date}</p>
             </div>
-            
-
-
         </div>
-        <div className="mt-2">
+        <div className="mt-2 flex">
           
           <p className="text-xs text-gray-500">{reading_time} min read</p>
+            <button onClick={() =>bookMarks(blog)} className="ml-2 text-gray-500 hover:text-gray-700">
+              <IoBookmark />
+            </button>
         </div>
       </div>
       <h2 className="text-xl font-bold mt-2">{title}</h2>
