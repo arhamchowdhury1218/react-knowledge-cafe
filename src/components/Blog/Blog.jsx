@@ -1,8 +1,32 @@
 
 
 const Blog = ({blog}) => {
+  const {title, cover_img, author,author_img,reading_time,posted_date,hashtags} = blog
   return (
-    <div className="text-4xl font-bold" >Blog</div>
+    <div className="border border-gray-300 rounded-lg p-4 m-4">
+      <img src={cover_img} alt={`Cover image for ${title}`} className="w-full h-48 object-cover rounded-lg" />
+      <div className="flex justify-between items-center mt-4">
+        <div className="flex">
+            <img src={author_img} alt={`Author image for ${author}`} className="w-10 h-10 rounded-full" />
+            <div className="ml-2">
+                <p className="text-sm font-medium mr">{author}</p>
+                <p className="text-xs text-gray-500">{posted_date}</p>
+            </div>
+            
+
+
+        </div>
+        <div className="mt-2">
+          
+          <p className="text-xs text-gray-500">{reading_time} min read</p>
+        </div>
+      </div>
+      <h2 className="text-xl font-bold mt-2">{title}</h2>
+        <div className="flex mt-2">
+            {hashtags.map((hashtag, index) => <p key={index} className="text-xs text-blue-500 mr-2">{hashtag}</p>)}
+        </div>
+
+    </div>
   )
 }
 
