@@ -1,8 +1,9 @@
 import { FaBeer } from "react-icons/fa";
 import { IoBookmark } from "react-icons/io5";
 
-const Blog = ({ blog, bookMarks, handleMarkAsRead }) => {
+const Blog = ({blog, bookMarks, handleMarkAsRead }) => {
   const {
+    id,
     title,
     cover_img,
     author,
@@ -48,7 +49,7 @@ const Blog = ({ blog, bookMarks, handleMarkAsRead }) => {
           </p>
         ))}
       </div>
-      <button onClick={() => handleMarkAsRead(reading_time)} className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+      <button onClick={() => handleMarkAsRead(id, reading_time)} className="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
         Mark as Read
       </button>
     </div>
